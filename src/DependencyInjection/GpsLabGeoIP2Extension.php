@@ -72,7 +72,7 @@ class GpsLabGeoIP2Extension extends Extension
         // configure update database console command
         $container
             ->setDefinition(UpdateDatabaseCommand::class, new Definition(UpdateDatabaseCommand::class))
-            ->setPublic(false)
+            ->setPublic(true)
             ->setArguments([
                 new Reference(Downloader::class),
                 $databases,
@@ -82,7 +82,7 @@ class GpsLabGeoIP2Extension extends Extension
         // configure download database console command
         $container
             ->setDefinition(DownloadDatabaseCommand::class, new Definition(DownloadDatabaseCommand::class))
-            ->setPublic(false)
+            ->setPublic(true)
             ->setArguments([
                 new Reference(Downloader::class),
             ])
